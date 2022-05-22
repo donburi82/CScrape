@@ -3,7 +3,6 @@
     "name": "CScrape",
     "description": "CScrape",
     "version": "1.0.0",
-    "permissions": ["tabs"],
     "host_permissions": ["http://*/", "https://*/"],
     "action": {
         "default_title": "CScrape",

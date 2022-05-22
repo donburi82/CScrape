@@ -1,7 +1,6 @@
 document.getElementById("btn").addEventListener("click", update);
 
 async function fetchContents() {
-    console.log("Entered fetchContents");
     // 국방부
     fetch("http://www.mod.gov.cn/jzhzt/node_47321.htm")
         .then((response) => response.text())
@@ -98,8 +97,5 @@ async function fetchContents() {
 }
 
 async function update() {
-    console.log("Entered update");
     const result = await fetchContents();
-    console.log(result);
-    console.log("Exiting update");
 }
