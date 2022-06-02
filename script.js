@@ -44,28 +44,6 @@ async function fetchContents() {
             element.textContent = `최신 브리핑 날짜: ${dateForeign}`;
         });
 
-    //외교부
-    fetch("https://www.fmprc.gov.cn/web/fyrbt_673021/")
-        .then((response) => response.text())
-        .then((responseText) => {
-            //DOM scrape
-            const responseDoc = new DOMParser().parseFromString(
-                responseText,
-                "text/html"
-            );
-            const responseElement =
-                responseDoc.getElementsByTagName("ul")[2].firstElementChild;
-            //DOM read
-            urlForeign =
-                "https://www.fmprc.gov.cn/web/fyrbt_673021" +
-                responseElement.innerHTML.split('"')[1].slice(1);
-            dateForeign = responseElement.textContent.split("外")[0];
-            //DOM manipulate
-            var element = document.getElementById("foreign");
-            element.href = urlForeign;
-            element.textContent = `최신 브리핑 날짜: ${dateForeign}`;
-        });
-
     //상무부
     fetch("http://www.mofcom.gov.cn/article/ae/slfw/")
         .then((response) => response.text())
